@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+  </head>
+  <body>
+    <form>
+      <input type="file" accect="video/*" />
+      <button class="button-primary" type="submit">Get Info</button>
+    </form>
+    <script>
+
+      const electron = require('electron');
+
+      const { ipcRenderer } = electron;
+
+      document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const { path } = document.querySelector('input').files[0];
+        ipcRenderer.send('video:submit', path);
+      });
+
+      ipcRenderer.on('video:metadata', (err, metadata) => {
+        console.log(metadata);
+      });
+
+      //require('../renderer.js')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron": "^2.0.0",
+    "electron-reload": "^1.2.5"
+  },
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "lokijs": "^1.5.5"
+  }
+}
